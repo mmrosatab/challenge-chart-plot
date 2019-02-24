@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 
-class PageContainer extends Component
+class Layout extends Component
 {
   render()
   {
     return (
       <div>
         <div className="Top">
-          <p><b>Your's Challenge</b></p>
+          <p class="TopText"><b>Mayara's Challenge</b></p>
         </div>
         
         <div>
-        
+          
         </div>
         
         <div>
@@ -29,11 +29,24 @@ class PageContainer extends Component
   }
 }
 
+class InputTextBox extends Component
+{
+  render()
+  {
+    return <input>Digite seu texto</input>
+  }
+
+}
+
 class InputUserArea extends Component
 {
   render()
   {
-    return
+    return (
+    <div>
+      <InputTextBox/>
+    </div>
+    )
   }
 }
 
@@ -76,7 +89,7 @@ class App extends Component
   render(){
     return (
       <div className="App">
-      <PageContainer/>
+      <Layout/>
       </div>
     );
   }

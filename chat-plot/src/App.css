@@ -1,7 +1,6 @@
 .Top 
 {
-  font-size: 18px;
-  font-family: monospace;
+  
   margin: 0px;
   height:50px;
   color: #282c34;
@@ -10,6 +9,12 @@
   text-align: left;
 }
 
+.TopText
+{
+  margin: 12px;
+  font-size: 18px;
+  font-family: monospace;
+}
 .Bottom 
 {
   position:absolute;

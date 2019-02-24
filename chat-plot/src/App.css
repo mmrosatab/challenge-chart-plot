@@ -1,33 +1,71 @@
+/* source-sans-pro-regular - latin */
+@font-face 
+{
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/source-sans-pro-v11-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+       url('./fonts/source-sans-pro-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/source-sans-pro-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/source-sans-pro-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/source-sans-pro-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/source-sans-pro-v11-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+}
 .Top 
 {
   
-  margin: 0px;
-  height:50px;
   color: #282c34;
   border: 2px solid rgb(235, 232, 232);
   background-color: rgb(235, 232, 232);
   text-align: left;
+
+  width: 100%;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
+
 
 .TopText
 {
-  margin: 12px;
+  margin-top: 12px;
+  margin-left: 40px;
   font-size: 18px;
-  font-family: monospace;
+  font-family: 'Source Sans Pro';
 }
 .Bottom 
 {
   position:absolute;
   bottom:0;
   width:100%;
+  width: 100vw;
+
   height:50px;
   border: 2px solid rgb(235, 232, 232);
   background-color: rgb(235, 232, 232);
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
-.SendButton
+.GenerateChartButton
 {
-  margin: 12px;
+  margin-top: 12px;
+  margin-left: 40px;
   color: white;
   height: 30px;
   width: 110px;
@@ -35,4 +73,22 @@
   border: 0px solid;
   border-radius: 3px;
   background-color: rgb(26, 140, 255);
+}
+
+textarea
+{  
+  /* box-sizing: padding-box; */
+  overflow-y:scroll;
+  /* demo only: */
+  padding:10px;
+  width:100%;
+  max-width: 100%;
+  font-size:14px;
+  font-family: monospace;
+  margin:0px auto;
+  display:block;
+  border-radius:0px;
+  border:0px solid #0A122A;
+  background-color: #0A122A;
+  color: white;
 }

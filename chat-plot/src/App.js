@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 
+
 class Layout extends Component
 {
   render()
@@ -9,31 +10,26 @@ class Layout extends Component
     return (
       <div>
         <div className="Top">
-          <p class="TopText"><b>Mayara's Challenge</b></p>
-        </div>
-        
+          <p className="TopText"><b>Mayara's Challenge</b></p>
+        </div>        
         <div>
-          
+            <InputTextArea/>
         </div>
-        
         <div>
+          <BottomRect/>
+        </div>
 
-        </div>
-        
-        <div>
-            <BottomRect/>
-        </div>
       </div> 
       
     ) 
   }
 }
 
-class InputTextBox extends Component
+class InputTextArea extends Component
 {
   render()
   {
-    return <input>Digite seu texto</input>
+    return <textarea>Insert your events</textarea>
   }
 
 }
@@ -44,7 +40,7 @@ class InputUserArea extends Component
   {
     return (
     <div>
-      <InputTextBox/>
+      <InputTextArea/>
     </div>
     )
   }
@@ -58,11 +54,11 @@ class ChartPlot extends Component
   }
 }
 
-class SendButton extends Component
+class GenerateChartButton extends Component
 {
   render()
   {
-    return <button class="SendButton">GENERATE CHART</button>
+    return <button className="GenerateChartButton">GENERATE CHART</button>
   }
 }
 
@@ -72,7 +68,7 @@ class BottomRect extends Component
   {
     return (
       <div class="Bottom">
-        <SendButton/>
+        <GenerateChartButton/>
       </div>
     )
   }

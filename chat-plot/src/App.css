@@ -1,4 +1,117 @@
-/* source-sans-pro-regular - latin */
+.larger_container
+{
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.top_container 
+{
+  
+  /*color: #282c34;*/
+  color: rgb(40, 44, 52);
+  border: 0px;
+  background-color: rgb(235, 232, 232);
+  text-align: left;
+
+  width: 100%;
+  width: 100vw;
+  height: 60px;
+
+  margin: 0 auto;
+  padding: 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.topcontainer_text
+{
+  left: 40px;
+  position: absolute;
+  font-size: 18px;
+  font-family: 'Source Sans Pro';
+  font-weight: bold;
+}
+
+.textarea_container
+{
+  width: 100%;
+  width: 100vw;
+  height: 120px;
+  position: absolute;
+  top: 60px;
+  
+}
+
+.textarea
+{
+  width: 99%;
+  height: 120px;
+  position: absolute;
+  left: 4px;
+
+  border: 0px;
+  background-color: rgb(10, 18, 42);
+  color: rgb(235, 232, 232);
+
+  font-family: 'Source Code Pro';
+  
+  overflow-y: scroll;
+
+}
+
+.chartplot_container
+{
+  position: absolute;
+  top: 184px;
+  bottom: 60px;
+  
+  width: 100%;
+  width: 100vw;
+
+  text-align: center;
+}
+
+.bottom_container
+{
+  position: absolute;
+  bottom: 0px;
+  width:100%;
+  width: 100vw;
+
+  height: 60px;
+  border: 0px;
+  background-color: rgb(235, 232, 232);
+
+}
+
+
+.generatechart_button
+{
+  
+  position: absolute;
+  top: 12px;
+  left: 40px;
+
+  color: white;
+  
+  height: 30px;
+  width: 110px;
+  
+  font-size: 10px;
+  font-family: 'Source Sans Pro';
+  
+  border: 0px solid;
+  border-radius: 3px;
+  background-color: rgb(26, 140, 255);
+}
+
+
+/*import google fonts*/
 @font-face 
 {
   font-family: 'Source Sans Pro';
@@ -11,84 +124,4 @@
        url('./fonts/source-sans-pro-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
        url('./fonts/source-sans-pro-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./fonts/source-sans-pro-v11-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
-}
-.Top 
-{
-  
-  color: #282c34;
-  border: 2px solid rgb(235, 232, 232);
-  background-color: rgb(235, 232, 232);
-  text-align: left;
-
-  width: 100%;
-  width: 100vw;
-  margin: 0 auto;
-  padding: 0;
-
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-
-.TopText
-{
-  margin-top: 12px;
-  margin-left: 40px;
-  font-size: 18px;
-  font-family: 'Source Sans Pro';
-}
-.Bottom 
-{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  width: 100vw;
-
-  height:50px;
-  border: 2px solid rgb(235, 232, 232);
-  background-color: rgb(235, 232, 232);
-
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.GenerateChartButton
-{
-  margin-top: 12px;
-  margin-left: 40px;
-  color: white;
-  height: 30px;
-  width: 110px;
-  font-size: 10px;
-  border: 0px solid;
-  border-radius: 3px;
-  background-color: rgb(26, 140, 255);
-}
-
-textarea
-{  
-  /* box-sizing: padding-box; */
-  overflow-y:scroll;
-  /* demo only: */
-  padding:10px;
-  width:100%;
-  max-width: 100%;
-  font-size:14px;
-  font-family: monospace;
-  margin:0px auto;
-  display:block;
-  border-radius:0px;
-  border:0px solid #0A122A;
-  background-color: #0A122A;
-  color: white;
 }

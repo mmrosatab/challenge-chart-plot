@@ -21,7 +21,7 @@ class LargerContainer extends Component
   handleChange(event) 
   {
     this.setState({ 
-        text: event.target.value
+        value: event.target.value
     });
   }
 

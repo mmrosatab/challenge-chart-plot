@@ -31,12 +31,7 @@ class App extends Component
   
   buttonClicked()
   {
-
     let temp = preparDataChart(this.state.value);
-    //alert(temp.s[0].name);
-    //alert(temp.s[0].data[0]);
-    //alert(temp.s[0].data[1]);
-    //alert(temp.c);
 
     this.setState({
       categories: temp.categories,
@@ -47,7 +42,6 @@ class App extends Component
 
   render()
   {
-
     return (
       <div className="app">
         <HeaderContainer/>
@@ -56,7 +50,6 @@ class App extends Component
             <ChartPlotContainer categories={this.state.categories} series={this.state.series}/> 
             : <div></div>
           }
-        
         <FooterContainer buttonClicked={this.buttonClicked}/>
       </div>
     )

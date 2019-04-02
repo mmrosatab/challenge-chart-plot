@@ -163,11 +163,10 @@ function preparDataChart(str)
             list.push(aux2[i]);
 
           }
-          alert(aux2[i].name);
-          alert(aux2[i].data[0]);
-          alert(aux2[i].data[1]);
+          
         }
 
+        // get format minutes of timestamp
         let t1 = minInterval(tGlobal[0]);
         let t2 = minInterval(tGlobal[1]);
         
@@ -178,6 +177,8 @@ function preparDataChart(str)
 
       default:
         //alert(array[i].type);
+        alert("Invalid event");
+        return false;
 
     }
   }

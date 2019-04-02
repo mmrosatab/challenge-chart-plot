@@ -18,7 +18,6 @@ class ChartPlotContainer extends Component
             },
             series: this.props.series
         };
-
     }
 
     render()

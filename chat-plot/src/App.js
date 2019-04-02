@@ -14,8 +14,8 @@ class App extends Component
 
     this.state = {
       value: '',
-      categorie: [],
-      data: [],
+      categories: '',
+      series: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -33,29 +33,30 @@ class App extends Component
   {
 
     let temp = preparDataChart(this.state.value);
-    
-    let newCategorie = this.state.categorie;
-    newCategorie.push(temp.categorie);
-
-    let newData = this.state.data;
-    newData.push(temp.data);
+    //alert(temp.s[0].name);
+    //alert(temp.s[0].data[0]);
+    //alert(temp.s[0].data[1]);
+    //alert(temp.c);
 
     this.setState({
-      categorie: newCategorie,
-      data: newData
+      categories: temp.categories,
+      series: temp.series
     });
+  
   }
 
   render()
   {
-    console.log(this.data);
-    console.log(this.categorie);    
-    //<ChartPlotContainer newValue={this.state.send}/>
+
     return (
       <div className="app">
         <HeaderContainer/>
         <TextAreaContainer value={this.value} handleChange={this.handleChange}/>
-        <ChartPlotContainer newData={this.state.data} newCategorie={this.state.categorie}/>
+          {this.state.categories !== '' && this.state.series !== '' ?
+            <ChartPlotContainer categories={this.state.categories} series={this.state.series}/> 
+            : <div></div>
+          }
+        
         <FooterContainer buttonClicked={this.buttonClicked}/>
       </div>
     )

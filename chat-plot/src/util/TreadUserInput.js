@@ -1,4 +1,4 @@
-// This function return an array of string Json 
+// This function return an array of string Json. 
 function createJsonString(str)
 {   
     let str1 = str.trim();
@@ -12,6 +12,7 @@ function createJsonString(str)
     return array;
 }
 
+// This function checks whether a timestamp passed as an argument is within a valid range.
 function verifyTimestamp(tInterval, tCurrent)
 {
   return ((tCurrent >= tInterval[0]) && (tCurrent <= tInterval[1]));
@@ -27,16 +28,15 @@ function startIndex(array)
       return i;
     }
   }
-
   return -1;
 }
 
+/* This function is used when an span event is called for 
+update list of datas removing index that timestamp is out new interval. */
 function updateDatas(newInterval, chartData1)
 {
   for(let i=0; i<chartData1.length; i++)
   {
-    
-
     if(!verifyTimestamp(newInterval,chartData1[i][0]))
     {
       alert("timestamp local: "+chartData1[i][0]);
@@ -47,7 +47,7 @@ function updateDatas(newInterval, chartData1)
   }
 }
 
-// This function generate a dictionary that have datas e categories for chart plot
+// This function generate a dictionary that have datas e categories for chart plot.
 function createLabelCategorie(sJson, group1, select1, timestamp1, chartData1)
 {
   let label = ""; // variable for concatenation between strings of group
@@ -58,7 +58,6 @@ function createLabelCategorie(sJson, group1, select1, timestamp1, chartData1)
     label = label + " " + sJson[group1[i]];
   }
 
-
   for (let i=0; i< select1.length; i++)
   {
     labelgroup[i] = label + " " + select1[i];
@@ -67,7 +66,14 @@ function createLabelCategorie(sJson, group1, select1, timestamp1, chartData1)
     //alert(timestamp1+"_"+labelgroup[i]+"_"+sJson[select1[i]]);
     chartData1.push([timestamp1, labelgroup[i], sJson[select1[i]]]); 
   }
+}
 
+// This function return a timestamp in format of minutes
+function minInterval(timestamp)
+{
+  let date = new Date(timestamp);
+  let timeString = date.toISOString().substr(11, 5);
+  return timeString;
   
 }
 
@@ -76,19 +82,17 @@ function preparDataChart(str)
 {
   let array = createJsonString(str);
   let index = startIndex(array);
-  
-  //alert(index);
 
   if (index < 0)
   {
     // no event start
+    alert("No start event was found");
     return false;
   }
 
   let chartData = [];
   let select = array[index].select;
   let group = array[index].group;
-  
   let tGlobal = [];
   let dict = {"span": false,"data": false};
   
@@ -96,7 +100,6 @@ function preparDataChart(str)
   {
     switch (array[i].type)
     {
-    
       case 'span':
                
         // update timestamp
@@ -113,7 +116,7 @@ function preparDataChart(str)
         }else
         {
           dict['span'] = true;
-          alert(dict['span']);
+          //alert(dict['span']);
         }
         
         break;
@@ -129,28 +132,65 @@ function preparDataChart(str)
 
       case 'stop':
         
-        alert(chartData.length);
-        
-        let data = [];
-        let categorie = [];
+        let aux1 = {};
+        let aux2 = {};
+        let list = []
 
-        for (let i=0; i<chartData.length; i++)
+        for(let i=0;i<chartData.length;i++)
         {
-          //alert(chartData[i]);
-          categorie[i] = chartData[i][1];
-          data[i] = chartData[i][2];
+          try
+          {
+            aux1[chartData[i][1]].push(chartData[i][2]);
+
+          }catch
+          {
+            aux1[chartData[i][1]] = [chartData[i][2]];
+          }
+
         }
-      
-        return {
-          categorie: categorie,
-          data:  data
+        
+        // transform datas in js object
+        for(let i in aux1)
+        {
+          try
+          {
+            aux2[i].data = aux1[i];
+
+          }catch
+          {
+            aux2[i] = {name: i, data: []};
+            aux2[i].data = aux1[i];
+            list.push(aux2[i]);
+
+          }
+          alert(aux2[i].name);
+          alert(aux2[i].data[0]);
+          alert(aux2[i].data[1]);
+        }
+
+        let t1 = minInterval(tGlobal[0]);
+        let t2 = minInterval(tGlobal[1]);
+        
+        return{
+          categories: [t1,t2],
+          series: list
         };
 
       default:
-        alert(array[i].type);
+        //alert(array[i].type);
 
     }
   }
   
 }
+
+// This function print data of series and categories of chartplot for verification
+function printerData(aux)
+{
+  for(let i in aux)
+  {
+    alert("Key: "+i+" Value: "+aux[i]);
+  }
+}
+
 export {preparDataChart}

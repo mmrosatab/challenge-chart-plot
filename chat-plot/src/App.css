@@ -18,7 +18,6 @@
   left: 0;
   width:100%;
   height: 10%;
-
   background-color: rgb(235, 232, 232);
   
 }
@@ -101,31 +100,25 @@
 
 /* scrollbar style */
 
-/* width */
 ::-webkit-scrollbar 
 {
   width: 10px;
 }
-
-/* fundo da barra*/
 ::-webkit-scrollbar-track 
 {
   background: rgb(10, 18, 42);
 }
 
-/* corr mouse em cima */
 ::-webkit-scrollbar-thumb 
 {
   background: rgb(102, 102, 102); 
   border-radius: 10px;
 }
 
-/* cor sem mouse em cima */
 ::-webkit-scrollbar-thumb:hover 
 {
   background: rgb(102, 102, 102); 
 }
-
 
 /*import google fonts*/
 @font-face 

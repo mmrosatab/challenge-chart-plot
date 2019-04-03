@@ -33,11 +33,13 @@ class App extends Component
   {
     let temp = preparDataChart(this.state.value);
 
-    this.setState({
-      categories: temp.categories,
-      series: temp.series
-    });
-  
+    if(temp !== false)
+    {
+      this.setState({
+        categories: temp.categories,
+        series: temp.series
+      });
+    }
   }
 
   render()

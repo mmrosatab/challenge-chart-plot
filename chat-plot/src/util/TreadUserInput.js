@@ -110,6 +110,7 @@ function preparDataChart(str)
           // update data
           if(chartData.length > 0)
           {
+            alert("update data");
             updateDatas(tGlobal,chartData);
           }
   
@@ -132,6 +133,12 @@ function preparDataChart(str)
 
       case 'stop':
         
+        if (chartData.length == 0)
+        {
+          alert("There is no data to plot");
+          return false;
+        }
+
         let aux1 = {};
         let aux2 = {};
         let list = []
@@ -186,7 +193,7 @@ function preparDataChart(str)
 }
 
 // This function print data of series and categories of chartplot for verification
-function printerData(aux)
+function printData(aux)
 {
   for(let i in aux)
   {

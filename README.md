@@ -10,9 +10,9 @@ While a Span event is not defined, data type events are not captured to be compu
 
 If there is a new Span event, a new global timestamp will be defined and a check will be made on the data of the Data type events that have been registered so far, removing events where the timestamp is not in the global range of timestamps.
 
-### `Screenshots`
+### Screenshots
 
-### `Tests`
+### Tests
 
 The tests were performed with some sets of input tests found in the test.txt file.
 

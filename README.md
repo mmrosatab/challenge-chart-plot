@@ -12,9 +12,9 @@ If there is a new Span event, a new global timestamp will be defined and a check
 
 ### Tests
 
-The tests were performed with some sets of input tests found in the test.txt file.
+The tests were performed with some sets of input tests found in the [test.txt](https://github.com/mmrosatab/challenge-chart-plot/blob/master/chat-plot/tests.txt) file.
 
-## An example of data entry for happy day
+### An example of data entry for happy day
 
 
 {type: 'start', timestamp: 1519862400000, select: ['min_response_time', 'max_response_time'], group:['os', 'browser']}
@@ -28,4 +28,6 @@ The tests were performed with some sets of input tests found in the test.txt fil
 {type: 'data', timestamp: 1519862460000, os: 'mac', browser: 'firefox', min_response_time: 0.2, max_response_time: 1.1}
 {type: 'data', timestamp: 1519862460000, os: 'linux', browser: 'firefox', min_response_time: 0.3, max_response_time: 1.4}
 {type: 'stop', timestamp: 1519862460000}
+
+![Captura de tela de 2019-04-02 14-51-56](https://user-images.githubusercontent.com/9852787/58393770-96412b80-8016-11e9-88d3-9eaee8b55cfd.png)
 

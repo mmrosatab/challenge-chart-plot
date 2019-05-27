@@ -6,11 +6,11 @@ This repository is intended to meet the challenge proposed by Intelie. The chall
 
 Application development began with the processing of the data entered by the user into the text box. For each row of data, the spaces between the strings were removed, and then that data was transported to a JSON string and stored in a list.
 
-The strategy used to solve the problem consisted of reading each position of the list, searching the index of the last Start event present in this list, and storing that index so that only subsequent data to that start event is considered. Therefore, after you set the list index that contains the last Start event of the set, the Select and Group information is captured.
+The strategy used to solve the problem consisted of reading each position of the list, searching the index of the last *start event* present in this list, and storing that index so that only subsequent data to that start event is considered. Therefore, after you set the list index that contains the last *start event* of the set, the *select* and *group* information is captured.
 
-While a Span event is not defined, data type events are not captured to be computed. When a Span event is defined, start and end timestamps are collected to set the global timestamps interval. Then data-type events are captured following the criteria that their timestamps must be within the global timestamp range. The timestamp of the Data event must be contained in the global timestamp interval, otherwise this event will not be counted.
+While a *span event* is not defined, data type events are not captured to be computed. When a *span event* is defined, start and end timestamps are collected to set the global timestamps interval. Then *data-type events* are captured following the criteria that their timestamps must be within the global timestamp range. The *timestamp* of the *data event* must be contained in the global timestamp interval, otherwise this event will not be counted.
 
-If there is a new Span event, a new global timestamp will be defined and a check will be made on the data of the Data type events that have been registered so far, removing events where the timestamp is not in the global range of timestamps.
+If there is a new *span event*, a new global timestamp will be defined and a check will be made on the data of the *data type* events that have been registered so far, removing events where the timestamp is not in the global range of timestamps.
 
 ### Tests
 

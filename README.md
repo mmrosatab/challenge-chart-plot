@@ -29,4 +29,5 @@ The tests were performed with some sets of input tests found in the test.txt fil
 {type: 'data', timestamp: 1519862460000, os: 'linux', browser: 'firefox', min_response_time: 0.3, max_response_time: 1.4}
 {type: 'stop', timestamp: 1519862460000}
 
+Captura de tela de 2019-04-02 14-51-56.png
 

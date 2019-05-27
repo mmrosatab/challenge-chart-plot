@@ -29,5 +29,3 @@ The tests were performed with some sets of input tests found in the test.txt fil
 {type: 'data', timestamp: 1519862460000, os: 'linux', browser: 'firefox', min_response_time: 0.3, max_response_time: 1.4}
 {type: 'stop', timestamp: 1519862460000}
 
-https://github.com/mmrosatab/challenge-chart-plot/commit/87250076474bf46a75fd3090cc77bf4f135ff674?diff=unified#diff-8cdc0e20af6f8644bcbbd57b060d1044
-

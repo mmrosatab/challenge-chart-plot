@@ -1,6 +1,8 @@
-# challenge-chart-plot
+## challenge-chart-plot
 
-## Strategy
+This repository is intended to meet the challenge proposed by Intelie. The challenge is to develop an application using ReactJS to plot charts. The application reads and processes data that has been entered by the user into a text box and then plots a graph corresponding to that entry.
+
+### Strategy
 
 Application development began with the processing of the data entered by the user into the text box. For each row of data, the spaces between the strings were removed, and then that data was transported to a JSON string and stored in a list.
 
@@ -14,7 +16,7 @@ If there is a new Span event, a new global timestamp will be defined and a check
 
 The tests were performed with some sets of input tests found in the [test.txt](https://github.com/mmrosatab/challenge-chart-plot/blob/master/chat-plot/tests.txt) file.
 
-### An example of data entry for happy day
+### An example of entry and exit for the happy day
 
 
 {type: 'start', timestamp: 1519862400000, select: ['min_response_time', 'max_response_time'], group:['os', 'browser']}

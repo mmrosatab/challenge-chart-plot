@@ -2,7 +2,7 @@
 
 This repository is intended to meet the challenge proposed by Intelie. The challenge is to develop an application using ReactJS to plot charts. The application reads and processes data that has been entered by the user into a text box and then plots a graph corresponding to that entry.
 
-You can use this application here: challenge-chart-plot.vercel.app
+You can use this application here: https://challenge-chart-plot.vercel.app/
 
 ### Strategy
 

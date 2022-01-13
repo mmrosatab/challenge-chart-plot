@@ -14,10 +14,6 @@ While a _span event_ is not defined, data type events are not captured to be com
 
 If there is a new _span event_, a new global timestamp will be defined and a check will be made on the data of the _data type_ events that have been registered so far, removing events where the timestamp is not in the global range of timestamps.
 
-### Tests
-
-The tests were performed with some sets of input tests found in the [test.txt](https://github.com/mmrosatab/challenge-chart-plot/blob/master/chat-plot/tests.txt) file.
-
 ### An example of entry and exit for the happy day
 
 ###### {type: 'start', timestamp: 1519862400000, select: ['min_response_time', 'max_response_time'], group:['os', 'browser']}

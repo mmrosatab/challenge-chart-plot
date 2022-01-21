@@ -94,7 +94,7 @@ function preparDataChart(str) {
         break;
 
       case "stop":
-        if (chartData.length == 0) {
+        if (chartData.length === 0) {
           return false;
         }
 
@@ -131,12 +131,6 @@ function preparDataChart(str) {
       default:
         return false;
     }
-  }
-}
-
-function printData(aux) {
-  for (let i in aux) {
-    alert("Key: " + i + " Value: " + aux[i]);
   }
 }
 

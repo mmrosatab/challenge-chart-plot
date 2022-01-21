@@ -4,6 +4,16 @@ This repository is intended to meet the challenge proposed by Intelie. The chall
 
 You can use this application here: https://challenge-chart-plot.vercel.app/
 
+### How use this application locally?
+
+1. Install dependencies
+
+> yarn install
+
+2. Run app
+
+> yarn start
+
 ### Strategy
 
 Application development began with the processing of the data entered by the user into the text box. For each row of data, the spaces between the strings were removed, and then that data was transported to a JSON string and stored in a list.

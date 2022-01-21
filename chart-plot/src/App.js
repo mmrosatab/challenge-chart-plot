@@ -27,7 +27,8 @@ class App extends Component {
   }
 
   buttonClicked() {
-    let temp = preparDataChart(this.state.value);
+    let temp =
+      this.state.value !== "" ? preparDataChart(this.state.value) : false;
 
     if (temp !== false) {
       this.setState({

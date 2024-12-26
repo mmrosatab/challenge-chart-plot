@@ -1,64 +1,52 @@
-import React, { Component } from "react";
-import "./App.css";
-import HeaderContainer from "../src/components/HeaderContainer";
-import FooterContainer from "../src/components/FooterContainer";
-import TextAreaContainer from "../src/components/TextAreaContainer";
-import ChartPlotContainer from "../src/components/ChartPlotContainer";
-import { preparDataChart } from "../src/util/TreadUserInput";
+import React, { useState } from 'react'
+import { Header, TextArea, ChartPlot, Footer } from './components'
+import { preparDataChart } from '../src/util/TreadUserInput'
+import './App.css'
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+export default function App() {
 
-    this.state = {
-      value: "",
-      categories: "",
-      series: "",
-    };
+    const [chartProperties, setChartProperties] = useState({
+        value: '',
+        categories: null,
+        series: null,
+    })
 
-    this.handleChange = this.handleChange.bind(this);
-    this.buttonClicked = this.buttonClicked.bind(this);
-  }
+    const handleClick = () => {
+        let temp = chartProperties.value !== null ? preparDataChart(chartProperties.value) : false
 
-  handleChange(event) {
-    this.setState({
-      value: event.target.value,
-    });
-  }
-
-  buttonClicked() {
-    let temp =
-      this.state.value !== "" ? preparDataChart(this.state.value) : false;
-
-    if (temp !== false) {
-      this.setState({
-        categories: temp.categories,
-        series: temp.series,
-        value: "",
-      });
+        if (temp !== false) {
+            setChartProperties({
+                categories: temp.categories,
+                series: temp.series,
+                value: '',
+            })
+        }
     }
-  }
 
-  render() {
+    const handleChange = (event) => {
+        setChartProperties((prevState) => ({
+            ...prevState,
+            value: event.target.value
+        }))
+    }
+
+
     return (
-      <div className="app">
-        <HeaderContainer />
-        <TextAreaContainer
-          value={this.state.value}
-          handleChange={this.handleChange}
-        />
-        {this.state.categories !== "" && this.state.series !== "" ? (
-          <ChartPlotContainer
-            categories={this.state.categories}
-            series={this.state.series}
-          />
-        ) : (
-          <React.Fragment />
-        )}
-        <FooterContainer buttonClicked={this.buttonClicked} />
-      </div>
-    );
-  }
+        <div className="app">
+            <Header />
+            <TextArea
+                value={chartProperties.value}
+                handleChange={handleChange}
+            />
+            {chartProperties.categories !== null && chartProperties.series !== null ? (
+                <ChartPlot
+                    categories={chartProperties.categories}
+                    series={chartProperties.series}
+                />
+            ) : (
+                <React.Fragment />
+            )}
+            <Footer handleClick={handleClick} />
+        </div>
+    )
 }
-
-export default App;

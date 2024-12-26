@@ -12,7 +12,8 @@ export default [
         rules: {
             'semi': ['error', 'never'],
             'quotes': ['error', 'single'],
-            'indent': ['error', 4]
+            'indent': ['error', 4],
+            'react/prop-types': 'off'
         }
     }
 ]

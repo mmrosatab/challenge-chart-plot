@@ -47,14 +47,14 @@ export default function App() {
                 value={value}
                 handleChange={(event) => setValue(event.target.value)}
             />
-            {!!showChart && (
+            {showChart && (
                 <ChartPlot
                     categories={categories}
                     series={series}
                 />
             )}
 
-            {!!showError && (
+            {showError && (
                 <ErrorContainer>Opps... Dados de entrada inválidos</ErrorContainer>
             )}
 

@@ -1,51 +1,63 @@
 import React, { useState } from 'react'
 import { Header, TextArea, ChartPlot, Footer } from './components'
 import { preparDataChart } from '../src/util/TreadUserInput'
-import './App.css'
+import { ErrorContainer } from './styles'
 
 export default function App() {
 
+    const [value, setValue] = useState('')
     const [chartProperties, setChartProperties] = useState({
-        value: '',
         categories: null,
         series: null,
     })
+    const [showError, setShowError] = useState(false)
+    const [showChart, setShowChart] = useState(false)
 
     const handleClick = () => {
-        let temp = chartProperties.value !== null ? preparDataChart(chartProperties.value) : false
 
-        if (temp !== false) {
+        setChartProperties({
+            categories: null,
+            series: null,
+        })
+
+        setShowChart(false)
+        setShowError(false)
+
+        const temp = value !== null ? preparDataChart(value) : false
+
+        if (temp !== false && temp?.series && temp?.series?.length > 0) {
             setChartProperties({
                 categories: temp.categories,
                 series: temp.series,
-                value: '',
             })
+            setShowChart(true)
+        } else {
+            setShowError(true)
         }
+
+        setValue('')
     }
 
-    const handleChange = (event) => {
-        setChartProperties((prevState) => ({
-            ...prevState,
-            value: event.target.value
-        }))
-    }
-
+    const { categories, series } = chartProperties
 
     return (
-        <div className="app">
+        <div>
             <Header />
             <TextArea
-                value={chartProperties.value}
-                handleChange={handleChange}
+                value={value}
+                handleChange={(event) => setValue(event.target.value)}
             />
-            {chartProperties.categories !== null && chartProperties.series !== null ? (
+            {!!showChart && (
                 <ChartPlot
-                    categories={chartProperties.categories}
-                    series={chartProperties.series}
+                    categories={categories}
+                    series={series}
                 />
-            ) : (
-                <React.Fragment />
             )}
+
+            {!!showError && (
+                <ErrorContainer>Opps... Dados de entrada inválidos</ErrorContainer>
+            )}
+
             <Footer handleClick={handleClick} />
         </div>
     )

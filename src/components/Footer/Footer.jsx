@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Container } from './styles'
 
-export function Footer(handleClick) {
+export function Footer({ handleClick }) {
     return (
         <Container>
             <Button

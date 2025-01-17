@@ -15,10 +15,17 @@ export const TextAreaInput = styled.textarea`
     background-color: rgb(10, 18, 42);
     color: rgb(235, 232, 232);
     font-family: "Source Code Pro";
+    font-size: 16px;
     overflow-y: scroll;
     scrollbar-width: 18px;
     resize: none;
-    padding: 0;
-    padding: 0;
+    padding: 0px;
     outline: none;
+
+    &::placeholder{
+        color: rgb(235, 232, 232);
+        font-family: "Source Code Pro";
+        font-style: italic;
+        font-size: 16px;
+    }
 `

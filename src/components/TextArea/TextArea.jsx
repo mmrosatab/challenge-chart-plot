@@ -7,6 +7,7 @@ export function TextArea({ value, handleChange }) {
             <TextAreaInput
                 value={value}
                 onChange={handleChange}
+                placeholder='Input data ...'
             />
         </Container>
     )

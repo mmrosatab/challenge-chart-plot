@@ -46,6 +46,7 @@ export default function App() {
             <TextArea
                 value={value}
                 handleChange={(event) => setValue(event.target.value)}
+                placeholder="asdasd"
             />
             {showChart && (
                 <ChartPlot
@@ -58,7 +59,7 @@ export default function App() {
                 <ErrorContainer>Opps... Dados de entrada inválidos</ErrorContainer>
             )}
 
-            <Footer handleClick={handleClick} />
+            <Footer handleClick={handleClick} disabled={value.length === 0} />
         </div>
     )
 }

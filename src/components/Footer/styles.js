@@ -20,5 +20,6 @@ export const Button = styled.button`
     font-family: "Source Sans Pro";
     border: 0px solid;
     border-radius: 3px;
-    background-color: rgb(26, 140, 255);
+    background-color: ${({ disabled }) => disabled ? 'rgba(26, 140, 255, 0.25)' : 'rgb(26, 140, 255)'};
+    cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
 `
